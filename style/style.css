@@ -1,0 +1,45 @@
+header{
+  height: 50px;
+  background-color: #2E3A46;
+}
+
+.logo{
+  color: #1DD15E;
+
+}
+
+main{
+  background-color: #1E2D3B;
+  min-height: calc(100vh - 50px);
+}
+
+
+select{
+  width: 200px !important;
+  height: 340x !important;
+  border: 2px solid #1E2D3B !important;
+  border-radius: 5px !important;
+  padding: 5px 20px !important;
+  
+}
+
+
+.album{
+  width: 147px;
+  height: 200px;
+  margin: 20px;
+  border: 1px solid white;
+  color: white;
+}
+
+h6,
+p{
+  margin: 0;
+}
+h6{
+  margin-bottom: 10px;
+}
+
+p{
+  font-size: 10px;
+}
