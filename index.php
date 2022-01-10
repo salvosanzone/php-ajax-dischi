@@ -1,15 +1,20 @@
+<?php
 
-<!-- Prima Milestone:
+/* Prima Milestone:
 Stampiamo i dischi solo con l’utilizzo di PHP, che stampa direttamente i dischi in pagina: al caricamento della pagina ci saranno tutti i dischi.
 
 Seconda Milestone:
 Attraverso l’utilizzo di axios: al caricamento della pagina axios chiederà, attraverso una chiamata api, i dischi a php e li stamperà attraverso vue.
 
 Bonus:
-Attraverso un’altra chiamata api, filtrare gli album per genere -->
+Attraverso un’altra chiamata api, filtrare gli album per genere */
 
 
 
+//importo il database(l'array) 
+require_once __DIR__ . '/db/database.php';
+
+?>
 
 
 <!DOCTYPE html>
@@ -32,12 +37,6 @@ Attraverso un’altra chiamata api, filtrare gli album per genere -->
       <div class="logo">
         <i class="logo fab fa-spotify fs-1"></i>
       </div>
-      <select class="form-select" >
-        <option value="All">Seleziona genere</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
     </header>
     <!-- /HEADER -->
 
@@ -45,34 +44,27 @@ Attraverso un’altra chiamata api, filtrare gli album per genere -->
     <main>
       <div class="container d-flex flex-wrap justify-content-center">
   
+        <?php foreach($albums as $album) { ?>
   
-          <div 
-            v-for="(disc, index) in discs"
-            :key="index"
-            class="album"
-          >
+          <div class="album">
             <h6 class="text-center">
-              {{ disc.title }} 
+              <?php echo $album['title']; ?>
             </h6>
             <p class="text-center">
-              {{ disc.author }} 
+              <?php echo $album['author']; ?>
             </p>
             <p class="text-center">
-              {{ disc.year }} 
+              <?php echo $album['year']; ?>
             </p>
           </div>
   
+          <?php } ?>
   
       </div>
     </main>
     <!-- /MAIN-->
   </div>
 
-  <!-- vue -->
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <!-- axios -->
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <!-- js -->
-  <script src="script.js"></script>
+  
 </body>
 </html>
